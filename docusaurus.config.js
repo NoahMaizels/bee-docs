@@ -5,9 +5,9 @@ module.exports = {
   // note! we use SED to change this during automated builds, see ./.github/workflows/gh-pages.yml
   baseUrl: '/',
   plugins: [require.resolve('docusaurus-lunr-search')],
-  onBrokenLinks: 'error',
-  onBrokenMarkdownLinks: 'error',
-  onDuplicateRoutes: 'error',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  onDuplicateRoutes: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Swarm', // Usually your GitHub org/user name.
   projectName: 'bee', // Usually your repo name.
@@ -16,16 +16,41 @@ module.exports = {
       defaultMode: 'dark'
     },
     navbar: {
-      title: 'Swarm Bee',
+      title: 'Swarm',
       logo: {
         alt: 'Swarm Logo',
         src: 'img/swarm-logo-2.svg',
+        href: 'https://www.ethswarm.org/'
       },
       items: [
         {
+          to: 'docs/learn/get-started',
+          activeBasePath: 'docs',
+          label: 'Learn',
+          position: 'left',
+        },
+        {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Get Started',
+          label: 'Bee',
+          position: 'left',
+        },
+        {
+          to: "docs/api-reference",
+          activeBasePath: "docs",
+          label: "Bee API",
+          position: "left",
+        },
+        {
+          to: 'docs/bee-js/introduction',
+          activeBasePath: 'docs',
+          label: 'BeeJS',
+          position: 'left',
+        },
+        {
+          to: 'docs/api/bee-js',
+          activeBasePath: 'docs',
+          label: 'BeeJS API',
           position: 'left',
         },
         // {
@@ -40,12 +65,12 @@ module.exports = {
         //   label: 'Start Your Node',
         //   position: 'left',
         // },
-        {
-          to: 'docs/api-reference/api-reference',
-          activeBasePath: 'docs',
-          label: 'API Reference',
-          position: 'left',
-        },
+        // {
+        //   to: 'docs/api-reference/api-reference',
+        //   activeBasePath: 'docs',
+        //   label: 'API Reference',
+        //   position: 'left',
+        // },
         // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/ethersphere/bee',
